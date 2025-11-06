@@ -58,7 +58,7 @@ main{
     display: block;
     width: 400px;
     border: 1px solid #cccccc;
-    border-radius: 7px;
+    border-radius: 5px;
     height: 26px;
     margin: 8px;
     font-size: 13px;
@@ -107,8 +107,8 @@ main{
 
 .switch .switch-wrapper{
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 40px;
+    height: 20px;
     position: relative;
 }
 
@@ -133,11 +133,11 @@ main{
 
 .switch .switch-wrapper .switch-button::before{
     content: "";
-    width: 26px;
-    height: 26px;
+    width: 17px;
+    height: 15px;
     position: absolute;
     left: 4px;
-    bottom: 4px;
+    bottom: 3px;
     border-radius: 50%;
     transition: .4s all ease;
     background-color: aliceblue;
@@ -148,7 +148,7 @@ main{
 }
 
 .switch .switch-wrapper input:checked + .switch-button::before{
-    transform: translateX(26px);
+    transform: translateX(16px);
 }
 
 
