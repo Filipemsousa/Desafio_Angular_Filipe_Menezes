@@ -1,0 +1,15 @@
+.caixa_frente{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ranger_fundo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25vh;
+    margin-left: 30vh;
+    opacity: 50%;
+}
