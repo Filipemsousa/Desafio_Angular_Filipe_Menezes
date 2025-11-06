@@ -92,6 +92,74 @@ main{
 
 }
 
+.switch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.switch .switch-text{
+    padding-right: 0.3rem;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.switch .switch-wrapper{
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    position: relative;
+}
+
+.switch .switch-wrapper .switch-button{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 40px;
+    background-color: #9b9696;
+}
+
+.switch .switch-wrapper input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch .switch-wrapper .switch-button::before{
+    content: "";
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    transition: .4s all ease;
+    background-color: aliceblue;
+}
+
+.switch .switch-wrapper input:checked + .switch-button{
+    background-color: #32be84;
+}
+
+.switch .switch-wrapper input:checked + .switch-button::before{
+    transform: translateX(26px);
+}
+
+
+label span{
+    color: black;
+}
+
+label input:checked + span{
+    color: #3487d4;
+}
+
 .label-input i{ 
     position: relative;
     right: -1vh;
