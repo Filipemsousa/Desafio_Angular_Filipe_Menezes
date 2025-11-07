@@ -24,6 +24,11 @@
     margin-top: 10vh;
 }
 
+.caixa_todas{
+    display: flex;
+    flex-direction:column;
+}
+
 .caixa_info{
     
     display: flex;
