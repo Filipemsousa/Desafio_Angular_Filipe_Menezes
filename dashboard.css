@@ -1,10 +1,56 @@
+.dashboard_principal{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.carro_imagem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .titulo_dashboard{
     display: flex;
     align-self: center;
     justify-content: center;
-    color: blue;
+    color: rgb(17, 113, 238);
     font-family: Arial, Helvetica, sans-serif;
-    position: absolute;
-    margin-top: 20vh;
-    margin-left: 78vh;
+    position: relative;
+}
+
+.titulo_dashboard_ford{
+    display: flex;
+    margin-top: 10vh;
+}
+
+.caixa_info{
+    
+    display: flex;
+    flex-direction: column;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
+    border: 1px solid #b4b4b4; 
+    width:250px;
+    box-shadow: 1px 1px 3px;
+    position: relative;
+    margin-left: 20vh;
+    margin-top: 15vh;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+}
+
+.caixa_info_titulo{
+    display: flex;
+    color: black;
+    background-color: rgb(228, 230, 230);
+    border-bottom: 1px solid black;
+    width: 100%;
+    text-align: center;
+}
+
+.caixa_info_texto{
+    color:rgb(2, 61, 253);
+    height: 150px;
+    font-size: 18px;
 }
