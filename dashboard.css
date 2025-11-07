@@ -38,7 +38,7 @@
     font-size: 13px;
     border: 1px solid #b4b4b4; 
     width:230px;
-    height: 120px;
+    height: 150px;
     box-shadow: 1px 1px 3px;
     position: relative;
     margin-left: 20vh;
@@ -64,19 +64,38 @@
 .caixa_info_texto{
     display: flex;
     position: relative;
-    margin-top: 1vh;
+    margin-top: 3vh;
+    margin-right: 18vh;
     color:rgb(2, 61, 253);
-    height: 150px;
-    font-size: 35px;
-    
+    height: 180px;
+    font-size: 35px;  
+}
+
+.caixa_info_unidade{
+    display: flex;
+    position: relative;
+    margin-right: 20vh;
+    color:rgb(163, 163, 163);
+    height: 180px;
+    font-size: 20px;
 }
 
 #campoSelecao{
     display: flex;
     align-items: center;
     position: relative;
-    margin-top: 40px;
+    margin-top: 3vh;
     justify-content: center;
     font-size: 15px;
     padding: 10px;
 }
+
+.tabela,th,td{
+    border: 1px solid black;
+    background-color: rgb(110, 110, 236);
+    border-collapse: collapse;
+    padding: 6px;
+    text-align: center;
+    width: 100%;
+}
+
