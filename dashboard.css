@@ -33,10 +33,12 @@
     
     display: flex;
     flex-direction: column;
+    align-items: center;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 13px;
     border: 1px solid #b4b4b4; 
-    width:250px;
+    width:230px;
+    height: 120px;
     box-shadow: 1px 1px 3px;
     position: relative;
     margin-left: 20vh;
@@ -47,15 +49,34 @@
 
 .caixa_info_titulo{
     display: flex;
+    position: relative;
+    justify-content: center;
     color: black;
-    background-color: rgb(228, 230, 230);
+    align-items: center;
+    background-color: rgb(241, 245, 245);
     border-bottom: 1px solid black;
     width: 100%;
     text-align: center;
+    font-size: 22px;
+    
 }
 
 .caixa_info_texto{
+    display: flex;
+    position: relative;
+    margin-top: 1vh;
     color:rgb(2, 61, 253);
     height: 150px;
-    font-size: 18px;
+    font-size: 35px;
+    
+}
+
+#campoSelecao{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 40px;
+    justify-content: center;
+    font-size: 15px;
+    padding: 10px;
 }
