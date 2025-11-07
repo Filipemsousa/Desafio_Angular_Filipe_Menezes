@@ -1,4 +1,15 @@
+.botao_logout{
+    display: flex;
+    position: absolute;
+    width: 33px;
+    margin-left: 205vh;
+    padding: 15px;
+}
 
+.logout a{
+    width: 30px;
+    
+}
 
 .caixa_frente{
     z-index: 100;
@@ -42,4 +53,78 @@
     transform: translate(-50%, -50%);
     width: 1000px;
     opacity: 100%;
+}
+
+/*_______CSS DO MENU LATERAL_______*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.menu_link{
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: rgb(63, 199, 63);
+  display: block;
+  padding: 5px 5px;
+  background-color: rgb(228, 228, 228);  
+}
+
+a:hover{
+    background-color: rgb(176,224,230);
+    color: black;
+}
+
+.imagem_ford{
+    display: block;
+    padding: 5px 5px;
+    width: 50%; 
+}
+
+ul{
+    list-style: none;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    z-index: 100;
+}
+
+.imagem_menu{
+    width: 30px;
+    
+}
+
+label{
+    
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+}
+
+input[type="checkbox"]{
+    display: none;
+    
+}
+
+input[type="checkbox"]:checked ~nav{
+    transform: translateX(350px);
+}
+
+nav{
+    background-color: rgba(235, 235, 235, 0.5);
+    width: 180px;
+    height: 100%;
+    left: -350px;
+    position: absolute;
+    transition: all .5s;
+}
+
+.icones_home{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icone_menu_lateral{
+    display: flex;
 }

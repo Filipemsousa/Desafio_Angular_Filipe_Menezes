@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="menu.css">
+    
     <title>Home</title>
 </head>
 
 <body>
     <header></header>
     <main>
-        <input type="checkbox" id="check">
+        <div class="logout">
+            <a class="botao_logout_a" href="index.html">
+                <img class="botao_logout" id="icon_logout" src="img/icone_logout.png" alt="Icone logout">
+             </a>
+        </div>
+         
+        <input class="icone_menu_lateral" type="checkbox" id="check">
         <label for="check"><img class="imagem_menu" src="img/menu-icon.png" alt="" ></label>
         <nav>
             <ul>
                 <img class="imagem_ford" src="img/ford.png" alt="">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a class="menu_link" href="home.html">Home</a></li>
+                <li><a class="menu_link" href="dashboard.html">Dashboard</a></li>
             </ul>
         </nav>
     <div class="caixa_frente">
