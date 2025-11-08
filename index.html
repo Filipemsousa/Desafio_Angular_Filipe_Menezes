@@ -27,14 +27,14 @@
                         <div>
                             <label class="label-input" for="">
                                 <i class='bx bx-user' style="color:#2bd73a;"></i>
-                                <input type="text" name="email" placeholder="Insira seu e-mail*" class="fordform"
+                                <input type="text" id="email_id" name="email" placeholder="Insira seu e-mail*" class="fordform"
                                     required>
                             </label>
                         </div>
                         <div>
                             <label class="label-input" for="">
                                 <i class='bx bxs-lock' style="color:#2bd73a;" ></i>
-                                <input type="password" name="senha" placeholder="Insira sua senha*" class="fordform"
+                                <input type="password" id="senha_id" name="senha" placeholder="Insira sua senha*" class="fordform"
                                 required>
                                 
                             </label>
@@ -49,11 +49,27 @@
                             </label>
                         </div>
 
-                        <button class="botao_entrar" type="submit" id="btnEntra">Entrar</button>
+                        <button class="botao_entrar" type="submit" id="btnEntra" onclick="logar(); return false">Entrar</button>
                     </form>
                 </div>
             </div>
         </div>
+
+        <script>
+             function logar(){
+
+            var login = document.getElementById('email_id').value;
+            var senha = document.getElementById('senha_id').value;
+
+            if(login == "filipe@gmail.com" && senha == "1234"){
+                alert('Sucesso');
+                location.href = "home.html";
+            }else{
+                alert('Usuario ou senha incorretos');
+            }
+        }
+        </script>
+
     </main>
     <footer>
     </footer>
