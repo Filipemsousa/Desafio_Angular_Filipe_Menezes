@@ -65,7 +65,7 @@
     display: flex;
     position: relative;
     margin-top: 3vh;
-    margin-right: 18vh;
+    margin-right: 15vh;
     color:rgb(2, 61, 253);
     height: 180px;
     font-size: 35px;  
@@ -74,7 +74,7 @@
 .caixa_info_unidade{
     display: flex;
     position: relative;
-    margin-right: 20vh;
+    margin-right: 15vh;
     color:rgb(163, 163, 163);
     height: 180px;
     font-size: 20px;
@@ -98,7 +98,7 @@
     border-collapse: collapse;
     padding: 15px 10px;
     text-align: center;
-    width: 1500px;
+    width: 198vh;
 }
 
 th{
