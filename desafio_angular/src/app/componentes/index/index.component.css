@@ -178,11 +178,12 @@ label input:checked + span{
     align-items: center;
 }
 
+
+
 .icone_info_email{
     width: 20px;
-    display: flex;
-    margin-top: -38px;
-    margin-left: 440px;
+    
+    
 }
 
 .icone_info_login{
