@@ -20,6 +20,17 @@ main{
      
 }
 
+
+input{
+    z-index: 1000;
+}
+
+
+.icone_info_email_div{
+    width: 30px;
+}
+
+
 .logo_div{
     display: flex;
     justify-content: center;
@@ -97,12 +108,18 @@ main{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    margin-right: 20px;
 }
+
+
 
 .switch .switch-text{
     padding-right: 0.3rem;
     font-size: 1.2rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    
+    
 }
 
 .switch .switch-wrapper{
@@ -110,6 +127,7 @@ main{
     width: 40px;
     height: 20px;
     position: relative;
+    margin-left: 3px;
 }
 
 .switch .switch-wrapper .switch-button{
@@ -123,6 +141,7 @@ main{
     align-items: center;
     border-radius: 40px;
     background-color: #9b9696;
+    
 }
 
 .switch .switch-wrapper input{
@@ -182,6 +201,10 @@ label input:checked + span{
 
 .icone_info_email{
     width: 20px;
+    display: flex;
+    margin-left: 46vh;
+    position: relative;
+    margin-top: -40px;
     
     
 }
