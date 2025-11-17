@@ -36,7 +36,7 @@ main {
 
 .forms_div {
     width: 50%;
-    background-color: #f7f7f7;
+    background-color: #e6e0e0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -187,4 +187,36 @@ main {
 
 .switch-wrapper input:checked + .switch-button::before {
     transform: translateX(16px);
+}
+
+.icone_usuario{
+    width: 15px;
+    display: flex;
+    position: relative;
+    margin-left: -214px;
+    margin-top: -30px;
+}
+
+.icone_cadeado{
+    width: 15px;
+    display: flex;
+    position: relative;
+    margin-left: -214px;
+    margin-top: -30px;
+}
+
+.icone_informacao_usuario{
+    width: 15px;
+    display: flex;
+    position: relative;
+    margin-left: 454px;
+    margin-top: -28px;
+}
+
+.icone_informacao_logar{
+    width: 15px;
+    display: flex;
+    position: relative;
+    margin-left: 454px;
+    margin-top: -16px;
 }

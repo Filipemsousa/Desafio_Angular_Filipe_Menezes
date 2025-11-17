@@ -12,22 +12,30 @@
         <!-- LADO DIREITO: LOGIN -->
         <div class="forms_div">
 
-            <!-- LOGO NO TOPO CENTRALIZADA -->
+            
             <div class="logo_div">
                 <img class="logo" src="./img/ford.png" width="150">
             </div>
 
             <!-- FORMULÁRIO LOGIN ANGULAR -->
             <div class="login-angular">
-
+                
                 <h2 class="titulo">Boas Vindas</h2>
-
+                
+                
                 <input
+                    
                     type="text"
                     placeholder="Usuário"
                     class="fordform"
                     [(ngModel)]="username"
                 />
+                <div>
+                    <img class="icone_usuario" src="./img/icone_usuario.png" alt="">
+                </div>
+                <div>
+                    <img class="icone_informacao_usuario" src="./img/icone_informacao.png" alt="">
+                </div>
 
                 <input
                     type="password"
@@ -35,6 +43,10 @@
                     class="fordform"
                     [(ngModel)]="password"
                 />
+                <div>
+                    <img class="icone_cadeado" src="./img/icone_cadeado.png" alt="">
+                </div>
+                
 
                 <!-- SWITCH LOGAR AUTOMATICAMENTE -->
                 <div class="switch_auto">
@@ -47,12 +59,15 @@
                         </div>
                     </label>
                 </div>
+                <div>
+                    <img class="icone_informacao_logar" src="./img/icone_informacao.png" alt="">
+                </div>
 
                 <!-- BOTÃO -->
                 <button class="botao_entrar" (click)="login()">
                     Entrar
                 </button>
-
+                
                 <p class="msg">{{ message }}</p>
 
             </div>
