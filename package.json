@@ -8,14 +8,12 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "npm run start --workspace=apps/angular-app",
-    "start:api": "npm run start --workspace=apps/api",
-    "build": "npm run build --workspace=apps/angular-app",
-    "test": "npm run test --workspace=apps/angular-app",
-    "lint": "npm run lint --workspace=apps/angular-app",
-    "install:all": "npm install",
-    "clean": "npm run clean --workspaces --if-present",
-    "format": "npm run format --workspace=apps/angular-app --if-present"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "start:api": "cd apps/api && npm start"
   },
   "repository": {
     "type": "git",
@@ -34,8 +32,31 @@
     "url": "https://github.com/Filipemsousa/Desafio_Angular_Filipe_Menezes/issues"
   },
   "homepage": "https://github.com/Filipemsousa/Desafio_Angular_Filipe_Menezes#readme",
+  "dependencies": {
+    "@angular/animations": "^18.0.0",
+    "@angular/common": "^18.0.0",
+    "@angular/compiler": "^18.0.0",
+    "@angular/core": "^18.0.0",
+    "@angular/forms": "^18.0.0",
+    "@angular/platform-browser": "^18.0.0",
+    "@angular/platform-browser-dynamic": "^18.0.0",
+    "@angular/router": "^18.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.10"
+  },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^18.0.0",
+    "@angular/cli": "^18.0.0",
+    "@angular/compiler-cli": "^18.0.0",
+    "@types/jasmine": "~5.1.0",
     "@types/node": "^20.0.0",
-    "typescript": "^5.0.0"
+    "jasmine-core": "~5.1.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.5.0"
   }
 }

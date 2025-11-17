@@ -1,62 +1,62 @@
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
 <main>
+
     <div class="forms">
+
+        <!-- LADO ESQUERDO: IMAGEM -->
         <div class="ranger_img">
-            <img class="ranger" src="./img/ranger.png">
+            <img class="ranger" src="./img/ranger.png" />
         </div>
+
+        <!-- LADO DIREITO: LOGIN -->
         <div class="forms_div">
+
+            <!-- LOGO NO TOPO CENTRALIZADA -->
             <div class="logo_div">
-                <img class="logo" src="./img/ford.png" width="150" class="logo" />
+                <img class="logo" src="./img/ford.png" width="150">
             </div>
-            <div class="forms_div_texto">
-                <h2 class="titulo">Boas Vindas</h2>
 
-                <form onsubmit="Post(this); return false">
-                    <div class="label_email">
-                        <label class="label-input" for="">
-                            <i class='bx bx-user' style="color:#2bd73a;"></i>
-                            
-                            <input type="text" id="email_id" name="email" placeholder="Insira seu e-mail*" class="fordform"
-                                required>
-                                <div class="icone_info_email_div">
-                                    <img  class="icone_info_email" src="/img/icone_informacao.png" alt="">
-                                </div>    
-                        </label>
-                    
-                    </div>
-                    
-                    <div>
-                        <label class="label-input" for="">
-                            <i class='bx bxs-lock' style="color:#2bd73a;" ></i>
-                            <input type="password" id="senha_id" name="senha" placeholder="Insira sua senha*" class="fordform"
-                            required>
-                            
-                        </label>
-                    </div>
+            <!-- FORMULÁRIO LOGIN ANGULAR -->
+            <div class="login-angular">
 
-                    
+                <h2 class="titulo">Login</h2>
 
-                    
+                <input
+                    type="text"
+                    placeholder="Usuário"
+                    class="fordform"
+                    [(ngModel)]="username"
+                />
 
-                    <div class="txtLogin">
-                        <label class="switch">
-                            
-                            <span class="switch-text">Logar Automaticamente</span>
-                            
-                            <div class="switch-wrapper"> 
-                            <input type="checkbox" name="logar_checkbox">
-                            
+                <input
+                    type="password"
+                    placeholder="Senha"
+                    class="fordform"
+                    [(ngModel)]="password"
+                />
+
+                <!-- SWITCH LOGAR AUTOMATICAMENTE -->
+                <div class="switch_auto">
+                    <span class="switch-texto">Logar automaticamente</span>
+
+                    <label class="switch">
+                        <div class="switch-wrapper">
+                            <input type="checkbox">
                             <span class="switch-button"></span>
-                            <div>
-                                <img class="icone_info_login" src="img/icone_informacao.png" alt="icone">
-                            </div>
-                            </div>
-                        </label>
-                    </div>
+                        </div>
+                    </label>
+                </div>
 
-                    <button class="botao_entrar" type="submit" id="btnEntra" onclick="logar(); return false">Entrar</button>
-                </form>
+                <!-- BOTÃO -->
+                <button class="botao_entrar" (click)="login()">
+                    Entrar
+                </button>
+
+                <p class="msg">{{ message }}</p>
+
             </div>
         </div>
     </div>
+
 </main>
