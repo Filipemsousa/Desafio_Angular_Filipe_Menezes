@@ -41,7 +41,11 @@ main {
     flex-direction: column;
     align-items: center;
     position: relative;
+
+    /* 🔵 ADICIONADO: centraliza tudo no meio verticalmente */
+    justify-content: center;
 }
+
 
 /* LOGO NO TOPO CENTRALIZADA */
 
@@ -49,9 +53,11 @@ main {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 40px;
-}
 
+    position: absolute;  /* tira do fluxo */
+    top: 20px;           /* sobe a logo */
+    left: 0;
+}
 .logo {
     display: block;
 }
