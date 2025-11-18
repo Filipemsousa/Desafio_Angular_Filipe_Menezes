@@ -6,12 +6,14 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  
+  ngOnInit(): void {
+    // add initialization logic here if needed
+  }
 
 }
