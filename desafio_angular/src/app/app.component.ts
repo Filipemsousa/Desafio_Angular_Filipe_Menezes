@@ -6,9 +6,10 @@ import { DashboardComponent } from './componentes/dashboard/dashboard.component'
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, IndexComponent, HomeComponent,DashboardComponent],
+  standalone: true,
+  imports: [RouterOutlet, IndexComponent, HomeComponent, DashboardComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'desafio_angular';

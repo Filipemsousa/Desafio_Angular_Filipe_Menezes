@@ -7,7 +7,5 @@ export const routes: Routes = [
     {path:"index",component:IndexComponent},
     {path:"home",component:HomeComponent},
     {path:"dashboard",component:DashboardComponent},
-    {path:"",redirectTo:"home",pathMatch:"full"},
-    {path:"",redirectTo:"index",pathMatch:"full"},
-    {path:"",redirectTo:"dashboard",pathMatch:"full"}
+    {path:"",redirectTo:"index",pathMatch:"full"}
 ];

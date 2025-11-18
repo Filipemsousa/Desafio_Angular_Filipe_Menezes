@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-index',
@@ -10,30 +12,38 @@ import { FormsModule } from '@angular/forms';
 })
 export class IndexComponent {
 
-  // Campos de formulário
+  
   username: string = '';
   password: string = '';
 
-  // Mensagem para feedback
+  
   message: string = '';
 
-  constructor() {}
+  constructor(private apiService: ApiService, private router: Router) {}
 
   login() {
-    // Validação simples
     if (!this.username || !this.password) {
       this.message = 'Preencha todos os campos.';
       return;
     }
 
-    // Exemplo de login estático (troque pela sua API depois)
-    if (this.username === 'admin' && this.password === '1234') {
-      this.message = 'Login realizado com sucesso!';
-      // Aqui você pode redirecionar usando Router:
-      // this.router.navigate(['/home']);
-    } else {
-      this.message = 'Usuário ou senha incorretos.';
-    }
+    const body = {
+      nome: this.username,
+      senha: this.password
+    };
+
+    const endpoint = 'login';
+    this.apiService.post(endpoint, body).subscribe({
+      next: (res: any) => {
+        this.message = 'Login realizado com sucesso!';
+        localStorage.setItem('user', JSON.stringify(res));
+        this.router.navigate(['/home']);
+      },
+      error: (err: any) => {
+        console.error(err);
+        this.message = err.error?.message || 'Erro ao conectar ao servidor.';
+      }
+    });
   }
 
 }

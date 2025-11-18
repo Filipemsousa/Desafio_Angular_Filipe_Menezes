@@ -27,45 +27,40 @@
             <div class="caixa_info">
                 <h1 class="caixa_info_titulo">Veículo</h1>
                 <label for="campoSelecao"></label>
-                
-                <select name="" id="campoSelecao">
-                    
-                    <option value="0" selected disabled>Escolha o Veículo</option>
-                    <option value="1">Ranger</option>
-                    <option value="2">Mustang</option>
-                    <option value="3">Territory</option>
-                    <option value="3">Bronco Sport</option>
-                
+
+                <select name="" id="campoSelecao" (change)="onVehicleChange($event)">
+                    <option value="" selected disabled>Escolha o Veículo</option>
+                    <option *ngFor="let vehicle of vehicles" [value]="vehicle.vehicle">{{vehicle.vehicle}}</option>
                 </select>
 
             </div>
 
             <div class="caixa_info">
                 <h1 class="caixa_info_titulo">Total de Vendas</h1>
-                <p class="caixa_info_texto">1500</p>
+                <p class="caixa_info_texto">{{ selectedVehicle?.volumetotal || '0' }}</p>
                 <p class="caixa_info_unidade">Unid.</p>
             </div>
 
             <div class="caixa_info">
                 <h1 class="caixa_info_titulo">Conectados</h1>
-                <p class="caixa_info_texto">500</p>
+                <p class="caixa_info_texto">{{ selectedVehicle?.connected || '0' }}</p>
                 <p class="caixa_info_unidade">Unid.</p>
             </div>
 
             <div class="caixa_info">
                 <h1 class="caixa_info_titulo">Update Software</h1>
-                <p class="caixa_info_texto">750</p>
+                <p class="caixa_info_texto">{{ selectedVehicle?.softwareUpdates || '0' }}</p>
                 <p class="caixa_info_unidade">Unid.</p>
             </div>
 
 
         </div>
         <div class="carro_imagem">
-            <img class="carro_imagem_centro" src="img/mustang.png" alt="">
+            <img class="carro_imagem_centro" [src]="selectedVehicle ? getVehicleImage(selectedVehicle.vehicle) : 'img/mustang.png'" [alt]="selectedVehicle?.vehicle || 'Carro'">
         </div>
     </div>
 
-    <table class="tabela">
+      <table class="tabela">
         <thead>
           <tr>
             <th>Código - Vin</th>
@@ -77,13 +72,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>2LFKAMXZNNVBQ3SMXNZAQP</td>
-            <td>50000 km</td>
-            <td>90%</td>
-            <td>on</td>
-            <td>-12,2322</td>
-            <td>-35,2314</td>
+          <tr *ngIf="vehicleDetails.length === 0">
+            <td colspan="6" style="text-align: center;">Selecione um veículo para ver os dados</td>
+          </tr>
+          <tr *ngFor="let detail of vehicleDetails; let i = index">
+            <td>{{ getVinByVehicle(selectedVehicle?.vehicle || '') }}</td>
+            <td>{{ detail?.odometro || 0 }} km</td>
+            <td>{{ detail?.nivelCombustivel || 0 }}%</td>
+            <td>{{ detail?.status || 'N/A' }}</td>
+            <td>{{ detail?.lat || 0 }}</td>
+            <td>{{ detail?.long || 0 }}</td>
           </tr>
         </tbody>
       </table>
