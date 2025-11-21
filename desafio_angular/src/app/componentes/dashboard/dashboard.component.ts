@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { Veiculos, Veiculo } from '../../models/veiculo.model';
 import { CarByVin } from '../../models/carbyvin.model';
@@ -38,7 +39,7 @@ export class DashboardComponent implements OnInit {
   isTableVisible: boolean = false;
   validationMessage: string = '';
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.vehicleMapping = Object.fromEntries(
@@ -152,5 +153,10 @@ export class DashboardComponent implements OnInit {
 
   getVinByVehicle(vehicleName: string): string {
     return this.vinMapping[vehicleName as keyof typeof this.vinMapping] || '';
+  }
+
+  logout(): void {
+    localStorage.removeItem('user');
+    this.router.navigate(['/index']);
   }
 }

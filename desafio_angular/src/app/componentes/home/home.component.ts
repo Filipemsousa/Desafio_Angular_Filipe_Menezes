@@ -16,4 +16,8 @@ export class HomeComponent implements OnInit {
     // add initialization logic here if needed
   }
 
+  logout(): void {
+    localStorage.removeItem('user');
+    this.router.navigate(['/index']);
+  }
 }
