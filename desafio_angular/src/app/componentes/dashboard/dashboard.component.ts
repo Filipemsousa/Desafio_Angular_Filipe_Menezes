@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { Veiculos, Veiculo } from '../../models/veiculo.model';
 import { CarByVin } from '../../models/carbyvin.model';
@@ -7,7 +8,7 @@ import { CarByVin } from '../../models/carbyvin.model';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -25,22 +26,35 @@ export class DashboardComponent implements OnInit {
     'Ranger': '2FRHDUYS2Y63NHD22454',
     'Mustang': '2RFAASDY54E4HDU34874',
     'Territory': '2FRHDUYS2Y63NHD22455',
-    'Bronco Sport': '2RFAASDY54E4HDU34875'
+    'Bronco Sport': '2RFAASDY54E4HDU34875',
+    'RangerExtra1': '2FRHDUYS2Y63NHD22654', // treat as Ranger
+    'RangerExtra2': '2FRHDUYS2Y63NHD22854'  // treat as Ranger
   };
+
+  // Reverse mapping: VIN to vehicle
+  private vehicleMapping: { [key: string]: string } = {};
+
+  vinEntered: string = '';
+  isTableVisible: boolean = false;
+  validationMessage: string = '';
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.vehicleMapping = Object.fromEntries(
+      Object.entries(this.vinMapping).map(([vehicle, vin]) => [vin, vehicle])
+    );
     this.loadVehicles();
   }
 
   loadVehicles(): void {
     this.apiService.getVehicles().subscribe({
-      next: (vehicles: Veiculo[]) => {
-        this.vehicles = vehicles;
+      next: (data: Veiculos) => {
+        this.vehicles = data;
       },
       error: (err) => {
         console.error('Erro ao carregar veículos:', err);
+        this.vehicles = [];
       }
     });
   }
@@ -51,11 +65,18 @@ export class DashboardComponent implements OnInit {
 
     if (vehicleName && this.vinMapping[vehicleName as keyof typeof this.vinMapping]) {
       this.selectedVehicle = this.vehicles.find(v => v.vehicle === vehicleName) || null;
-      this.loadVehicleData(vehicleName);
+      this.validationMessage = '';
+      this.isTableVisible = false;
+      this.vehicleData = null;
+      this.vehicleDetails = [];
+      this.vinEntered = '';
     } else {
       this.selectedVehicle = null;
       this.vehicleData = null;
       this.vehicleDetails = [];
+      this.isTableVisible = false;
+      this.vinEntered = '';
+      this.validationMessage = '';
     }
   }
 
@@ -74,6 +95,48 @@ export class DashboardComponent implements OnInit {
           this.vehicleDetails = [];
         }
       });
+    }
+  }
+
+  loadVehicleDataByVin(vin: string): void {
+    this.apiService.post('vehicleData', { vin }).subscribe({
+      next: (data: CarByVin) => {
+        this.vehicleData = data;
+        this.vehicleDetails = [data];
+        this.validationMessage = 'VIN válido.';
+        this.isTableVisible = true;
+      },
+      error: (err) => {
+        console.error('Erro ao carregar dados do veículo por VIN:', err);
+        this.vehicleData = null;
+        this.vehicleDetails = [];
+        this.validationMessage = 'VIN inválido.';
+        this.isTableVisible = false;
+        this.selectedVehicle = null;
+        this.vehicleData = null;
+        this.vehicleDetails = [];
+        this.vinEntered = '';
+      }
+    });
+  }
+
+  onVinInput(): void {
+    if (this.vinEntered.trim()) {
+      const vehicleName = this.vehicleMapping[this.vinEntered.trim()];
+      if (vehicleName) {
+        this.validationMessage = 'Verificando VIN...';
+        this.loadVehicleDataByVin(this.vinEntered.trim());
+      } else {
+        this.validationMessage = 'VIN inválido.';
+        this.isTableVisible = false;
+        this.vehicleData = null;
+        this.vehicleDetails = [];
+      }
+    } else {
+      this.validationMessage = '';
+      this.isTableVisible = false;
+      this.vehicleData = null;
+      this.vehicleDetails = [];
     }
   }
 

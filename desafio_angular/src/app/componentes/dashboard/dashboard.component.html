@@ -37,19 +37,19 @@
 
             <div class="caixa_info">
                 <h1 class="caixa_info_titulo">Total de Vendas</h1>
-                <p class="caixa_info_texto">{{ selectedVehicle?.volumetotal || '0' }}</p>
+                <p class="caixa_info_texto">{{ $any(selectedVehicle?.volumetotal) || '0' }}</p>
                 <p class="caixa_info_unidade">Unid.</p>
             </div>
 
             <div class="caixa_info">
                 <h1 class="caixa_info_titulo">Conectados</h1>
-                <p class="caixa_info_texto">{{ selectedVehicle?.connected || '0' }}</p>
+                <p class="caixa_info_texto">{{ $any(selectedVehicle?.connected) || '0' }}</p>
                 <p class="caixa_info_unidade">Unid.</p>
             </div>
 
             <div class="caixa_info">
                 <h1 class="caixa_info_titulo">Update Software</h1>
-                <p class="caixa_info_texto">{{ selectedVehicle?.softwareUpdates || '0' }}</p>
+                <p class="caixa_info_texto">{{ $any(selectedVehicle?.softwareUpdates) || '0' }}</p>
                 <p class="caixa_info_unidade">Unid.</p>
             </div>
 
@@ -72,16 +72,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngIf="vehicleDetails.length === 0">
-            <td colspan="6" style="text-align: center;">Selecione um veículo para ver os dados</td>
-          </tr>
-          <tr *ngFor="let detail of vehicleDetails; let i = index">
-            <td>{{ getVinByVehicle(selectedVehicle?.vehicle || '') }}</td>
-            <td>{{ detail?.odometro || 0 }} km</td>
-            <td>{{ detail?.nivelCombustivel || 0 }}%</td>
-            <td>{{ detail?.status || 'N/A' }}</td>
-            <td>{{ detail?.lat || 0 }}</td>
-            <td>{{ detail?.long || 0 }}</td>
+          <tr>
+            <td><input type="text" [(ngModel)]="vinEntered" (input)="onVinInput()" /></td>
+            <td>{{ vehicleData?.odometro || 0 }} km</td>
+            <td>{{ vehicleData?.nivelCombustivel || 0 }}%</td>
+            <td>{{ vehicleData?.status || 'N/A' }}</td>
+            <td>{{ vehicleData?.lat || 0 }}</td>
+            <td>{{ vehicleData?.long || 0 }}</td>
           </tr>
         </tbody>
       </table>
