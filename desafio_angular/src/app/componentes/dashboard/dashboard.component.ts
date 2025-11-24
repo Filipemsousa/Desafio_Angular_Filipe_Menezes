@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
   selectedVehicle: Veiculo | null = null;
   vehicleData: CarByVin | null = null;
 
-  // Dados para exibir na tabela
+  
   vehicleDetails: CarByVin[] = [];
 
   // Mapeamento de VINs para veículos (baseado na API)
@@ -28,11 +28,11 @@ export class DashboardComponent implements OnInit {
     'Mustang': '2RFAASDY54E4HDU34874',
     'Territory': '2FRHDUYS2Y63NHD22455',
     'Bronco Sport': '2RFAASDY54E4HDU34875',
-    'RangerExtra1': '2FRHDUYS2Y63NHD22654', // treat as Ranger
-    'RangerExtra2': '2FRHDUYS2Y63NHD22854'  // treat as Ranger
+    'RangerExtra1': '2FRHDUYS2Y63NHD22654', 
+    'RangerExtra2': '2FRHDUYS2Y63NHD22854'  
   };
 
-  // Reverse mapping: VIN to vehicle
+  
   private vehicleMapping: { [key: string]: string } = {};
 
   vinEntered: string = '';
@@ -88,7 +88,7 @@ export class DashboardComponent implements OnInit {
       this.apiService.post('vehicleData', { vin }).subscribe({
         next: (data: CarByVin) => {
           this.vehicleData = data;
-          this.vehicleDetails = [data]; // Mesmo veículo com diferentes dados? Ou múltiplos veículos?
+          this.vehicleDetails = [data]; 
         },
         error: (err) => {
           console.error('Erro ao carregar dados do veículo:', err);

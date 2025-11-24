@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    // add initialization logic here if needed
+    
   }
 
   logout(): void {

@@ -20,7 +20,7 @@ main {
     height: 100%;
 }
 
-/* ====== IMAGEM ESQUERDA ======== */
+
 
 .ranger_img {
     width: 50%;
@@ -42,27 +42,27 @@ main {
     align-items: center;
     position: relative;
 
-    /* 🔵 ADICIONADO: centraliza tudo no meio verticalmente */
+   
     justify-content: center;
 }
 
 
-/* LOGO NO TOPO CENTRALIZADA */
+
 
 .logo_div {
     width: 100%;
     display: flex;
     justify-content: center;
 
-    position: absolute;  /* tira do fluxo */
-    top: 20px;           /* sobe a logo */
+    position: absolute;  
+    top: 20px;           
     left: 0;
 }
 .logo {
     display: block;
 }
 
-/* ======== LOGIN BOX CENTRALIZADA ======== */
+
 
 .login-angular {
     margin-top: 60px;
@@ -76,14 +76,13 @@ main {
     align-items: center;
 }
 
-/* TÍTULO */
+
 
 .titulo {
     color: #32be84;
     margin-bottom: 15px;
 }
 
-/* INPUTS */
 
 .fordform {
     width: 400px;
@@ -96,7 +95,6 @@ main {
     padding-right: 10px;
 }
 
-/* BOTÃO ENTRAR */
 
 .botao_entrar {
     width: 440px;
@@ -116,7 +114,7 @@ main {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* MENSAGEM */
+
 
 .msg {
     margin-top: 10px;
@@ -124,7 +122,7 @@ main {
     color: #333;
 }
 
-/* ===== SWITCH LOGAR AUTO ===== */
+
 
 .switch_auto {
     width: 100%;
@@ -139,7 +137,7 @@ main {
     color: #333;
 }
 
-/* SWITCH ESTILO GERAL */
+
 
 .switch {
     display: flex;
@@ -179,7 +177,7 @@ main {
     transition: .4s ease;
 }
 
-/* CHECKED ON */
+
 
 .switch-wrapper input:checked + .switch-button {
     background-color: #32be84;
