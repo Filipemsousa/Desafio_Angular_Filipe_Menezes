@@ -5,7 +5,7 @@
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-## 📋 Sobre o Projeto
+## 📋 Sobre o Projeto: Pode rodar com npm start ou com ng serve
 
 Este é um **monorepo profissional** desenvolvido para o desafio de Angular, contendo uma aplicação completa com:
 - **Frontend**: Aplicação Angular com interface moderna e responsiva
