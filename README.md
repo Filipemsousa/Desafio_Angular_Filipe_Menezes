@@ -1,4 +1,4 @@
-# Desafio Angular - Monorepo Profissional
+# Desafio Angular - Filipe Menezes Sousa
 
 ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
