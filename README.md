@@ -6,7 +6,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
 ## 📋 Sobre o Projeto: Pode rodar com npm start ou com ng serve
-Use cd desafio_angular para ir até a pasta do desafio e use npm start ou ng serve.
+Use *********cd desafio_angular para ir até a pasta do desafio e use npm start ou ng serve.**********
 Este é um **monorepo profissional** desenvolvido para o desafio de Angular, contendo uma aplicação completa com:
 - **Frontend**: Aplicação Angular com interface moderna e responsiva
 - **Backend**: API RESTful em Node.js com Express
