@@ -1,0 +1,13 @@
+{
+    "version": 2,
+    "buildCommand": "cd desafio_angular && npm install && npm run build",
+    "outputDirectory": "desafio_angular/dist/desafio_angular/browser",
+    "framework": null,
+    "installCommand": "npm install",
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
+        }
+    ]
+}
